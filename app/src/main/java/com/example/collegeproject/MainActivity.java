@@ -20,13 +20,5 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
          BagAdapter bagAdapter = new BagAdapter(this,bagName,image,price);
          listView.setAdapter(bagAdapter);
-
-            if(BagAdapter.flag==1)
-            {
-                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-                startActivity(intent);
-            }
-
-
     }
 }

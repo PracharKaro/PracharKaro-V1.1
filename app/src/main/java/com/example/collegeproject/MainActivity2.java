@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity2 extends AppCompatActivity {
     TextView t1,t2,t3;
-    FloatingActionButton increment,decrement;
+    ImageView increment,decrement,home,call,support,login;
     ImageView imageView;
     private int index=1;
     @Override
@@ -23,6 +23,10 @@ public class MainActivity2 extends AppCompatActivity {
         t1=findViewById(R.id.t1);
         t2=findViewById(R.id.t2);
         t3=findViewById(R.id.t3);
+        home=findViewById(R.id.home);
+        call=findViewById(R.id.call);
+        login=findViewById(R.id.login);
+        support=findViewById(R.id.support);
         increment=findViewById(R.id.increment);
         decrement=findViewById(R.id.decrement);
         imageView=findViewById(R.id.imageView);
@@ -35,6 +39,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 index++;
                 t1.setText(index + "");
+                t2.setText(getIntent().getStringExtra("bagPrice")+ "*" + index);
             }
         });
         decrement.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +48,7 @@ public class MainActivity2 extends AppCompatActivity {
                 if(index>1) {
                     index--;
                     t1.setText(index + "");
+                    t2.setText(getIntent().getStringExtra("bagPrice")+ "*" + index);
                 }
                 else
                 {
@@ -51,7 +57,13 @@ public class MainActivity2 extends AppCompatActivity {
 
             }
         });
-
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToHome = new Intent(MainActivity2.this,MainActivity.class);
+                startActivity(goToHome);
+            }
+        });
 
 
     }
