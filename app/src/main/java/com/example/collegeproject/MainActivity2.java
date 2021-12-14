@@ -1,37 +1,46 @@
 package com.example.collegeproject;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 public class MainActivity2 extends AppCompatActivity {
     TextView t1,t2,t3;
-    ImageView increment,decrement,home,call,support,login;
+    ImageView increment,decrement,home,mail,support,login,cart;
     ImageView imageView;
     private int index=1;
+    Button proceed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         t1=findViewById(R.id.t1);
         t2=findViewById(R.id.t2);
-        t3=findViewById(R.id.t3);
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#095566"));
+        actionBar.setBackgroundDrawable(colorDrawable);
         home=findViewById(R.id.home);
-        call=findViewById(R.id.call);
-        login=findViewById(R.id.login);
+        mail=findViewById(R.id.mail);
+        login=findViewById(R.id.cart);
         support=findViewById(R.id.support);
         increment=findViewById(R.id.increment);
         decrement=findViewById(R.id.decrement);
         imageView=findViewById(R.id.imageView);
+        cart=findViewById(R.id.cart);
+        support=findViewById(R.id.support);
+        proceed=findViewById(R.id.proceed);
         String price1=getIntent().getStringExtra("bagPrice");
-        t3.setText(getIntent().getStringExtra("bagName"));
+
         t2.setText(getIntent().getStringExtra("bagPrice"));
         imageView.setImageResource(getIntent().getIntExtra("bagImage",0));
         increment.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +56,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 if(index>1) {
                     index--;
-                    t1.setText(index + "");
+                    t1.setText(" " + index + "");
                     t2.setText(getIntent().getStringExtra("bagPrice")+ "*" + index);
                 }
                 else
@@ -64,7 +73,32 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(goToHome);
             }
         });
-
-
+        proceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent buy=new Intent(MainActivity2.this,MainActivity3.class);
+                buy.putExtra("bagimg",getIntent().getIntExtra("bagImage",0));
+                startActivity(buy);
+            }
+        });
+        mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mailbox=new Intent(MainActivity2.this,SMTP.class);
+                startActivity(mailbox);
+            }
+        });
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity2.this,"Your Cart is empty",Toast.LENGTH_SHORT).show();
+            }
+        });
+        support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity2.this,"Please call on +91 9304521641",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

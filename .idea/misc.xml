@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/CollegeProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/CollegeProject/app/src/main/res/layout/activity_main2.xml" value="0.264" />
+        <entry key="..\:/CollegeProject/app/src/main/res/layout/activity_main3.xml" value="0.2359375" />
+        <entry key="..\:/CollegeProject/app/src/main/res/layout/activity_smtp.xml" value="0.23822463768115942" />
+        <entry key="..\:/CollegeProject/app/src/main/res/layout/fragment_login_activity.xml" value="0.25" />
+        <entry key="..\:/CollegeProject/app/src/main/res/layout/fragment_registration_activity.xml" value="0.25" />
         <entry key="..\:/CollegeProject/app/src/main/res/layout/single_item.xml" value="0.25" />
       </map>
     </option>
