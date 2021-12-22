@@ -84,7 +84,7 @@ public class MainActivity2 extends AppCompatActivity {
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mailbox=new Intent(MainActivity2.this,SMTP.class);
+                Intent mailbox=new Intent(MainActivity2.this,Support.class);
                 startActivity(mailbox);
             }
         });

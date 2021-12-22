@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeProject">
         <activity
-            android:name=".SMTP"
+            android:name=".Support"
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
         <activity

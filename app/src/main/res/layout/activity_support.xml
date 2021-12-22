@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B6EFEA"
-    tools:context=".SMTP">
+    tools:context=".Support">
 
     <MultiAutoCompleteTextView
         android:id="@+id/feedbackmsg"
-        android:layout_width="393dp"
-        android:layout_height="91dp"
+        android:layout_width="250dp"
+        android:layout_height="59dp"
         android:layout_marginTop="20dp"
         android:completionHint="Enter Your Message Here... :)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/enterSubject" />
 
     <Button
         android:id="@+id/mailsending"
@@ -32,13 +32,13 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="388dp"
-        android:layout_height="130dp"
+        android:layout_width="383dp"
+        android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mailsending"
+        app:layout_constraintTop_toBottomOf="@+id/callMe"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/feedback" />
 
@@ -71,11 +71,13 @@
 
     <TextView
         android:id="@+id/textfeedback"
-        android:layout_width="197dp"
-        android:layout_height="16dp"
+        android:layout_width="198dp"
+        android:layout_height="37dp"
         android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-light"
+        android:includeFontPadding="true"
         android:text="Your feedback is important"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.556"
@@ -83,15 +85,38 @@
         app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
     <EditText
-        android:id="@+id/enterEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/enterSubject"
+        android:layout_width="184dp"
+        android:layout_height="47dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Enter Your Email"
+        android:hint="Your Subject Here..."
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textfeedback" />
+
+    <ImageView
+        android:id="@+id/callMe"
+        android:layout_width="39dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:src="@android:drawable/ic_menu_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailsending" />
+
+    <TextView
+        android:id="@+id/callMeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to call support executive"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callMe"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

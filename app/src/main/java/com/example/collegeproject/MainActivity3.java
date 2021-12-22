@@ -41,7 +41,7 @@ support=findViewById(R.id.support);
     mail.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent mailbox=new Intent(MainActivity3.this,SMTP.class);
+            Intent mailbox=new Intent(MainActivity3.this,Support.class);
             startActivity(mailbox);
         }
     });
