@@ -22,17 +22,18 @@ public class LoginActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_login_activity, null);
-        register = (TextView) root.findViewById(R.id.register);
-        loginbt = (Button) root.findViewById(R.id.loginbt);
+        View v =inflater.inflate(R.layout.fragment_login_activity, container, false);
+        register = v.findViewById(R.id.register);
+        loginbt = v.findViewById(R.id.loginbt);
        register.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-               Intent reg =new Intent(getContext(),RegistrationActivity.class);
-               startActivity(reg);
+               RegistrationActivity ra = new RegistrationActivity();
+               getFragmentManager().beginTransaction().replace(R.id.frameLayout,ra).commit();
              }
          });
 
-        return inflater.inflate(R.layout.fragment_login_activity, container, false);
+
+        return v;
     }
 }
