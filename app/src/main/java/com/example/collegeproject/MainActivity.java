@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.collegeproject.dataRegister.MyDbHandler;
+
 public class MainActivity extends AppCompatActivity {
     ListView listView;
     String[] bagName = {"Design 1.0","Design 2.0","Design 3.0","Design 4.0","Design 5.0","Design 6.0","Design 7.0","Design 8.0","Design 9.0","Design 10.0","Design 11.0","Design 12.0","Design 13.0","Design 14.0","Design 15.0","Design 16.0","Design 17.0"};
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MyDbHandler db = new MyDbHandler(MainActivity.this);
         listView = findViewById(R.id.listView);
          BagAdapter bagAdapter = new BagAdapter(this,bagName,image,price);
          listView.setAdapter(bagAdapter);

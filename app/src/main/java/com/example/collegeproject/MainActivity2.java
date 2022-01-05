@@ -97,7 +97,9 @@ public class MainActivity2 extends AppCompatActivity {
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity2.this,"Please call on +91 9304521641",Toast.LENGTH_SHORT).show();
+                Intent goToHome = new Intent(MainActivity2.this,Profile.class);
+                startActivity(goToHome);
+                //  Toast.makeText(MainActivity2.this,"Please call on +91 9304521641",Toast.LENGTH_SHORT).show();
             }
         });
     }

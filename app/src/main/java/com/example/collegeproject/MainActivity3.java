@@ -53,16 +53,16 @@ support=findViewById(R.id.support);
                str1=printName.getText().toString();
                str2=companyAddress.getText().toString();
                str3=email.getText().toString();
-               if(str1.length()>=1 && str2.length()>=1 && str3.length()>=1) {
+               //if(str1.length()>=1 && str2.length()>=1 && str3.length()>=1) {
                    FragmentManager fm = getSupportFragmentManager();
                    FragmentTransaction ft = fm.beginTransaction();
                    ft.replace(R.id.frameLayout, new LoginActivity());
                    ft.commit();
-               }
-               else
-               {
-                   Toast.makeText(MainActivity3.this,"First Enter Details",Toast.LENGTH_LONG).show();
-               }
+              // }
+             //  else
+               //{
+                 //  Toast.makeText(MainActivity3.this,"First Enter Details",Toast.LENGTH_LONG).show();
+               //}
            }
        });
         home.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +81,8 @@ support=findViewById(R.id.support);
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity3.this,"Please call on +91 9304521641",Toast.LENGTH_SHORT).show();
+                Intent goToHome = new Intent(MainActivity3.this,Profile.class);
+                startActivity(goToHome);
             }
         });
     }

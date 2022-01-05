@@ -38,12 +38,12 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <EditText
-            android:id="@+id/pass1R"
+            android:id="@+id/passR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
-            android:hint="Re-enter Password"
+            android:hint="Password"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -51,19 +51,19 @@
             app:layout_constraintTop_toBottomOf="@+id/mobileR" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/enter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="228dp"
-            android:text="Button"
+            android:text="Register"
             android:textColor="#221D1D"
             app:backgroundTint="#4A6CC3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.457"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pass1R"
+            app:layout_constraintTop_toBottomOf="@+id/passR"
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
