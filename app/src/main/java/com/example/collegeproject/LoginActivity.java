@@ -35,7 +35,10 @@ public class LoginActivity extends Fragment {
             public void onClick(View v) {
               if(user.getText().toString().equals(RegistrationActivity.usersDetail.getEmail()) && pass.getText().toString().equals(RegistrationActivity.usersDetail.getPassword()))
                 {
-                    Toast.makeText(getActivity(),"Successfully Login",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Login successfull",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getActivity(),MainActivity3.class);
+                    startActivity(intent);
+
                 }
                 else
                 {
