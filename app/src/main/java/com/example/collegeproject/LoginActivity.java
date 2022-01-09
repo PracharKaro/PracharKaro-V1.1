@@ -21,7 +21,7 @@ import com.example.collegeproject.model.UsersDetails;
 public class LoginActivity extends Fragment {
     TextView register;
     Button loginbt;
-    EditText user,pass;
+    public static EditText user,pass;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class LoginActivity extends Fragment {
             public void onClick(View v) {
               if(user.getText().toString().equals(RegistrationActivity.usersDetail.getEmail()) && pass.getText().toString().equals(RegistrationActivity.usersDetail.getPassword()))
                 {
+                    MainActivity3.wel=user.getText().toString();
                     Toast.makeText(getActivity(),"Login successfull",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getActivity(),MainActivity3.class);
                     startActivity(intent);

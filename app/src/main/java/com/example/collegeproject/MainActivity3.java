@@ -13,12 +13,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity3 extends AppCompatActivity {
     ImageView activity3bag,home,mail,cart,support;
     Button button;
     EditText printName,email,companyAddress;
+    public static String wel="";
+    public static TextView welcome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +35,13 @@ public class MainActivity3 extends AppCompatActivity {
         button=findViewById(R.id.button);
         mail=findViewById(R.id.mail);
        printName=findViewById(R.id.printName);
+       welcome=findViewById(R.id.welcome);
        email=findViewById(R.id.email);
        companyAddress=findViewById(R.id.companyAddress);
         activity3bag.setImageResource(getIntent().getIntExtra("bagimg",0));
-cart=findViewById(R.id.cart);
-support=findViewById(R.id.support);
+        cart=findViewById(R.id.cart);
+        support=findViewById(R.id.support);
+        welcome.setText("Welcome"+" "+wel);
 
     mail.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -53,16 +58,22 @@ support=findViewById(R.id.support);
                str1=printName.getText().toString();
                str2=companyAddress.getText().toString();
                str3=email.getText().toString();
-               //if(str1.length()>=1 && str2.length()>=1 && str3.length()>=1) {
-                   FragmentManager fm = getSupportFragmentManager();
-                   FragmentTransaction ft = fm.beginTransaction();
-                   ft.replace(R.id.frameLayout, new LoginActivity());
-                   ft.commit();
-              // }
-             //  else
-               //{
-                 //  Toast.makeText(MainActivity3.this,"First Enter Details",Toast.LENGTH_LONG).show();
-               //}
+
+               if(str1.length()>=1 && str2.length()>=1 && str3.length()>=1) {
+                   if (welcome.getText().toString().length()<=8){
+                       FragmentManager fm = getSupportFragmentManager();
+                       FragmentTransaction ft = fm.beginTransaction();
+                       ft.replace(R.id.frameLayout, new LoginActivity());
+                       ft.commit();
+                   } else {
+                       Intent intent = new Intent(MainActivity3.this, Cart.class);
+                       startActivity(intent);
+                   }
+               }
+              else
+               {
+                  Toast.makeText(MainActivity3.this,"First Enter Details",Toast.LENGTH_LONG).show();
+               }
            }
        });
         home.setOnClickListener(new View.OnClickListener() {

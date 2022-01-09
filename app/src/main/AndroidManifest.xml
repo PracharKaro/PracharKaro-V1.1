@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeProject">
         <activity
+            android:name=".Cart"
+            android:exported="true" />
+        <activity
             android:name=".Profile"
             android:exported="true" />
         <activity

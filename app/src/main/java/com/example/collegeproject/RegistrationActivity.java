@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.collegeproject.dataRegister.MyDbHandler;
 import com.example.collegeproject.model.UsersDetails;
 
 
@@ -20,6 +21,7 @@ public class RegistrationActivity extends Fragment {
     Button enter;
     public int flag=0;
     public static UsersDetails usersDetail = new UsersDetails();
+    MyDbHandler myDbHandler;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class RegistrationActivity extends Fragment {
         mobileR=v.findViewById(R.id.mobileR);
         passR=v.findViewById(R.id.passR);
         enter=v.findViewById(R.id.enter);
-
+        myDbHandler = new MyDbHandler(getActivity());
        // Log.d("dbPiyush","ID");
        // Log.d("dbPiyush","IssD");
         //UsersDetails usersDetails= new UsersDetails(name, email, password, phone);
@@ -49,6 +51,11 @@ public class RegistrationActivity extends Fragment {
                     usersDetails.setEmail(email);
                     usersDetails.setPhone(phone);
                     usersDetails.setPassword(password);
+                   /* Boolean checkInsertData = myDbHandler.addDetails(usersDetails);
+                    if(checkInsertData==true)
+                        Toast.makeText(getActivity(),"New Entry Inserted",Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(getActivity(),"New Entry Not Inserted",Toast.LENGTH_LONG).show();*/
                     Log.d("dbPiyush", "ID" + usersDetails.getEmail());
                     usersDetail = usersDetails;
 

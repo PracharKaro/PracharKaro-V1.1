@@ -31,9 +31,10 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        //db.execSQL("drop Table if exists"+ Params.TABLE_NAME);
     }
-    public void addDetails(UsersDetails ud){
+
+    public boolean addDetails(UsersDetails ud){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -42,9 +43,15 @@ public class MyDbHandler extends SQLiteOpenHelper {
         values.put(Params.KEY_PHONE,ud.getPhone());
         values.put(Params.KEY_PASSWORD,ud.getPassword());
 
-        db.insert(Params.TABLE_NAME,null,values);
-        Log.d("dbPiyush","Successfully inserted");
+        long insert = db.insert(Params.TABLE_NAME,null,values);
+        //Log.d("dbPiyush","Successfully inserted");
         db.close();
+        if(insert==-1) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
     public List<UsersDetails> getAllDetails(){
         List<UsersDetails> detailsList = new ArrayList<>();
